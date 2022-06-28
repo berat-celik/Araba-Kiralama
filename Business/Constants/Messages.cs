@@ -25,5 +25,6 @@ namespace Business.Constants
         public static string ErrorRent = "Kiralanmak istenen araba zaten kiralanmıştır";
         public static string RentDeleted = "İşlem silindi";
         public static string RentUpdated = "İşlem güncellendi";
+        public static string InvalidData = "Aradığınız kritere uygun bir data bulunmamaktadır";
     }
 }

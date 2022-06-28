@@ -30,7 +30,6 @@ namespace Business.Concrete
 
             }
             
-                 
              return new ErrorResult(Messages.CarDailyPriceInvalid);
 
         }
@@ -43,11 +42,16 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
+           
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
         public IDataResult<Car> GetCar(int carId)
         {
+            if (_carDal.Get(c => c.CarId == carId)==null)
+            {
+                return new ErrorDataResult<Car>(Messages.InvalidData);
+            }
             return new SuccessDataResult<Car>(_carDal.Get(c=>c.CarId==carId));
         }
 
